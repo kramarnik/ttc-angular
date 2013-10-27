@@ -1,0 +1,19 @@
+<div class="row-fluid">
+    <ul id="route-list" class="span4">
+        <li data-ng-repeat="route in routeList" data-ng-click="getRoute(route)">
+            {{ route }}
+        </li>
+    </ul>
+
+    <ul id="stop-list" class="span4">
+        <li data-ng-repeat="stop in route.stop" data-ng-click="getPredictions(route, stop)">
+            {{ stop }}
+        </li>
+    </ul>
+
+    <ul id="stop-list" class="span4">
+        <li data-ng-repeat="times in predictions.direction.prediction">
+            {{ times }}
+        </li>
+    </ul>
+</div>
