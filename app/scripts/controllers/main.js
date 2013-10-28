@@ -1,44 +1,41 @@
 'use strict';
 
 angular.module('ttcAngularApp')
-  .controller('MainCtrl', function ($scope, TtcService) {
+    .controller('MainCtrl', function ($scope, TtcService) {
    
-      $scope.loading = true;
+    $scope.loading = true;
 
-      TtcService.getRouteList().then(function (data) {
-          $scope.routeList = data;
-      }, function () {
+    TtcService.getRouteList().then(function (data) {
+        $scope.routeList = data;
+    }, function () {
 
-      }).finally(function () {
-          $scope.loading = false;
-      });
+    }).finally(function () {
+        $scope.loading = false;
+    });
 
-      $scope.route = null;
+    $scope.route = null;
 
-      $scope.getRoute = function (route) {
+    $scope.getRoute = function (route) {
+        $scope.loading = true;
 
-          $scope.loading = true;
-
-          TtcService.getRoute(route._tag).then(function (data){
-              $scope.route = data;
-          }, function(data){
+        TtcService.getRoute(route._tag).then(function (data){
+            $scope.route = data;
+        }, function(){
               
-          }).finally(function(){
-              $scope.loading = false;
-          });
+        }).finally(function(){
+            $scope.loading = false;
+        });
+    };
 
-      };
+    $scope.getPredictions = function (route, stop) {
+        $scope.loading = true;
 
-      $scope.getPredictions = function (route, stop) {
+        TtcService.getPredictions(route._tag, stop._tag).then(function (data) {
+            $scope.predictions = data;
+        }, function () {
 
-          $scope.loading = true;
-
-          TtcService.getPredictions(route._tag, stop._tag).then(function (data) {
-              $scope.predictions = data;
-          }, function (data) {
-
-          }).finally(function () {
-              $scope.loading = false;
-          });
-      }
-  });
+        }).finally(function () {
+            $scope.loading = false;
+        });
+    };
+});

@@ -100,7 +100,8 @@ module.exports = function (grunt) {
     },
     jshint: {
       options: {
-        jshintrc: '.jshintrc'
+        jshintrc: '.jshintrc',
+        ignores: ['<%= yeoman.app %>/scripts/libs/x2js.js']
       },
       all: [
         'Gruntfile.js',

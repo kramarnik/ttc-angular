@@ -65,5 +65,5 @@ angular.module('ttcAngularApp')
           getRouteList: getRouteList,
           getRoute: getRoute,
           getPredictions: getPredictions
-      }
+      };
 });
