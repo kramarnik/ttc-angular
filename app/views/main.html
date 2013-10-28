@@ -1,20 +1,23 @@
 <div class="row-fluid">
     <div class="span4 panel">
+        <div class="panel-header">Routes</div>
         <ul id="route-list" class="">
-            <li data-ng-repeat="route in routeList" data-ng-click="getRoute(route)">
+            <li data-ng-repeat="route in routeList" data-ng-class="{ selected: currentRoute._tag === route._tag }" data-ng-click="getRoute(route)">
                 {{ route._title }}
             </li>
         </ul>
     </div>
     <div class="span4 panel">
+        <div class="panel-header">Stops</div>
         <ul id="stop-list" class="">
-            <li data-ng-repeat="stop in route.stop" data-ng-click="getPredictions(route, stop)">
+            <li data-ng-repeat="stop in currentRoute.stop" data-ng-class="{ selected: stop._tag === predictions._stopTag }" data-ng-click="getPredictions(currentRoute, stop)">
                 {{ stop._title }}
             </li>
         </ul>
     </div>
     <div class="span4 panel">
-        <ul id="stop-list" class="">
+        <div class="panel-header">Times</div>
+        <ul id="prediction-list" class="">
             <li data-ng-repeat="times in predictions.direction.prediction">
                 {{ times._minutes }}
             </li>

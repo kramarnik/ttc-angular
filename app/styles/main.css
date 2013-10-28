@@ -13,20 +13,27 @@ body {
 }
 html, body, .container-fluid, .row-fluid, .panel{
     height:100%;
+    padding:0px;
+    margin:0px;
 }
 .panel {
     height:100%;
     overflow: auto;
     position:relative;
+    margin:0px;
+}
+.panel .panel-header{
+
 }
 .panel ul {
     list-style-type: none;
     border-top: 1px solid #ddd;
     position: absolute;
-    top: 0px;
+    top: 25px;
     left: 0px;
     right: 0px;
     bottom: 0px;
+    margin:0px;
 }
 .panel li {
     padding: 5px 5px 5px 15px;
@@ -35,7 +42,7 @@ html, body, .container-fluid, .row-fluid, .panel{
     border-bottom: 1px solid #ddd;
     cursor:pointer;
 }
-.panel li:hover {
+.panel li:hover, .panel li.selected {
     background: #ebf4ff;
     border-top: solid 1px #cadaee;
     border-bottom: solid 1px #cadaee;

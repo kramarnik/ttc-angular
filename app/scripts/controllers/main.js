@@ -13,13 +13,13 @@ angular.module('ttcAngularApp')
         $scope.loading = false;
     });
 
-    $scope.route = null;
+    $scope.currentRoute = null;
 
     $scope.getRoute = function (route) {
         $scope.loading = true;
 
         TtcService.getRoute(route._tag).then(function (data){
-            $scope.route = data;
+            $scope.currentRoute = data;
         }, function(){
               
         }).finally(function(){
