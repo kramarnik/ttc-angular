@@ -1,5 +1,5 @@
 <div class="row-fluid">
-    <div class="span4 panel">
+    <div class="span4 panel animated slideInLeft" data-ng-show="routeList.length > 0">
         <div class="panel-header">Routes</div>
         <ul id="route-list" class="">
             <li data-ng-repeat="route in routeList" data-ng-class="{ selected: currentRoute._tag === route._tag }" data-ng-click="getRoute(route)">
@@ -7,7 +7,7 @@
             </li>
         </ul>
     </div>
-    <div class="span4 panel">
+    <div class="span4 panel animated slideInDown" data-ng-show="currentRoute">
         <div class="panel-header">Stops</div>
         <ul id="stop-list" class="">
             <li data-ng-repeat="stop in currentRoute.stop" data-ng-class="{ selected: stop._tag === predictions._stopTag }" data-ng-click="getPredictions(currentRoute, stop)">
@@ -15,7 +15,7 @@
             </li>
         </ul>
     </div>
-    <div class="span4 panel">
+    <div class="span4 panel animated slideInRight" data-ng-show="predictions">
         <div class="panel-header">Times</div>
         <ul id="prediction-list" class="">
             <li data-ng-repeat="times in predictions.direction.prediction">
