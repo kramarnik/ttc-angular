@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ttcAngularApp')
-    .controller('MainCtrl', function ($scope, TtcService) {
+    .controller('MainCtrl',['$scope', 'TtcService', function ($scope, TtcService) {
    
     $scope.loading = true;
 
@@ -38,4 +38,4 @@ angular.module('ttcAngularApp')
             $scope.loading = false;
         });
     };
-});
+}]);

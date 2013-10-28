@@ -3,12 +3,12 @@
 describe('Service: Ttc', function () {
 
   // load the service's module
-  beforeEach(module('TtcangularApp'));
+  beforeEach(module('ttcAngularApp'));
 
   // instantiate service
   var Ttc;
-  beforeEach(inject(function (_Ttc_) {
-    Ttc = _Ttc_;
+  beforeEach(inject(function (TtcService) {
+    Ttc = TtcService;
   }));
 
   it('should do something', function () {

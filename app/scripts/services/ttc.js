@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ttcAngularApp')
-  .service('TtcService', function Ttc($http, $q) {
+  .service('TtcService', ['$http', '$q', function Ttc($http, $q) {
       // AngularJS will instantiate a singleton by calling "new" on this function
       var apiRoute = 'http://webservices.nextbus.com/service/publicXMLFeed',
           agency = 'ttc';
@@ -66,4 +66,4 @@ angular.module('ttcAngularApp')
           getRoute: getRoute,
           getPredictions: getPredictions
       };
-});
+}]);

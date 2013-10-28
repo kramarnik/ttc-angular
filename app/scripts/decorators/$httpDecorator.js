@@ -2,7 +2,7 @@
 
 angular.module('ttcAngularApp')
     .config(function ($provide) {
-        $provide.decorator('$http', function ($delegate, $q) {
+        $provide.decorator('$http', ['$delegate', '$q', function ($delegate, $q) {
             // decorate the $delegate
 
             $delegate.getXML = function (options) {
@@ -17,5 +17,5 @@ angular.module('ttcAngularApp')
             };
 
             return $delegate;
-        });
+        }]);
     });
